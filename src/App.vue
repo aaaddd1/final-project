@@ -1,22 +1,7 @@
 <template>
   <section>
-    <!-- My additions --> 
-      <!-- <router-link to="/">Home</router-link> -->
-     <!-- <header class="bg-at-blue text-white">
-     <nav class="container py-5 px-4 flex flex-col gap-4 items-center sm:flex-row">
-      <div class="flex items-center gap-x-4">
-          <h1>Welcome to the Vue Task App</h1>
-      </div>
-       <ul class="flex flex1 justify-end ">
-        <router-link class="cursor" to="/">Home</router-link>
-        <router-link class="cursor" to="/SignUp">Sign Up</router-link>
-        <router-link class="cursor" to="/SignIn">Sign In</router-link>
-        <li class="cursor">Logout</li>
-        <router-view class="app-main" />
-      </ul> 
-  </nav>
-</header> -->
- <Nav />
+    
+      <Nav />
      <div class=" font-Nunito box-border"> 
        
       <!-- <SignUp />
@@ -25,7 +10,6 @@
     <!-- Ends here --> 
    <!--  <router-view class="app-main" />  your routes will load inside of these tags --> 
      </div>    
-     
   </section>
 </template>
 

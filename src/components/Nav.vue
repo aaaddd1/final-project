@@ -8,7 +8,8 @@
         <router-link class="cursor" to="/">Home</router-link>
         <router-link class="cursor" to="/Register">Sign Up</router-link>
         <router-link class="cursor" to="/LogIn">Sign In</router-link>
-        <li class="cursor">Logout</li>
+        <!-- <button @click="logout" class="cursor">Logout</button> -->
+         <!-- <router-link v-if="user" class="cursor" to="/CreateTask">Tasks</router-link>  -->
       </ul> 
   </nav>
   <router-view class="app-main" />
@@ -18,8 +19,29 @@
 </template>
 
 <script>
+//23.3 addition
+import {supabase} from '../supabase'
+import { useRouter } from 'vue-router'
+
+//earlier addition
 export default {
     name: 'Nav',
+
+    //23.3 addition
+    setup(){
+    
+//setup ref to router
+        const router = useRouter();
+
+    //Logout function
+    const logout = async () => {
+        await supabase.auth.signOut();
+        alert("You have logged out, return to Home Page");
+        router.push({ path: '/' });
+    };
+        return{logout};
+    },
+    
 }
 </script>
 

@@ -12,8 +12,9 @@ import SignIn from "../components/SignIn.vue"
 export default {
     name: "LogIn",
     components:{
-        SignIn,
-    }
+    SignIn,
+    
+}
 
 }
 </script>
