@@ -13,7 +13,7 @@ export default {
         await supabase.auth.signOut();
         alert("You have logged out, return to Home Page");
         router.push({ path: '/' });
-    };
+    }
         return{logout};
     }
     
