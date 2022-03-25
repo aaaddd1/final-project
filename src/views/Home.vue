@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-center mt-10 text-xl text-mustard">To start creating your tasks either Sign in or Sign up </h1>
+    <h1 class="text-center mt-10 text-xl text-mustard">To start creating your tasks, please Sign in </h1>
   <SignIn />  
     <!-- <div> <img src="../assets/tasks1.png" alt="tasks" class="mx-auto py-10 "></div> -->
  </div>

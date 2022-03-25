@@ -14,11 +14,8 @@ export default {
         alert("You have logged out, return to Home Page");
         router.push({ path: '/' });
     }
-        return{logout};
+        return {logout},
     }
-    
-    
-
 }
 </script>
 

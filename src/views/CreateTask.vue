@@ -39,15 +39,15 @@
                 </td>
             </tr>
         </tbody>
-    </table>
-
+    </table>    
   </div>
+
+   
 </template>
 
 <script>
 export default {
-
-    data(){
+    data(){        
         return {
             task: '',
             editedTask: null,   //update task
@@ -92,9 +92,8 @@ export default {
             this.task = this.tasks[index].name;
             this.editedTask = index;
         },
-
-        
     }
+    
 };
 </script>
 

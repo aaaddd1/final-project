@@ -5,10 +5,10 @@
           <h1 class="text-4xl pb-8 ">Welcome to the Vue Task App</h1>
       </div>
        <ul class="flex flex1 justify-end ">
-        <router-link class="cursor" to="/">Home</router-link>
-        <router-link class="cursor" to="/Register">Sign Up</router-link>
-        <router-link class="cursor" to="/LogIn">Sign In</router-link>
-        <!-- <button @click="logout" class="cursor">Logout</button> -->
+         <router-link class="cursor" to="/">Home</router-link> 
+        <router-link class="cursor" v-if="$route.path !== '/task'" to="/Register">Sign Up</router-link>
+        <router-link class="cursor" v-if="$route.path !== '/task'" to="/LogIn">Sign In</router-link>
+        <button v-if="$route.path === '/task'" @click="logout" class="cursor">Logout</button> 
          <!-- <router-link v-if="user" class="cursor" to="/CreateTask">Tasks</router-link>  -->
       </ul> 
   </nav>
@@ -33,10 +33,10 @@ export default {
 //setup ref to router
         const router = useRouter();
 
-    //Logout function
+    //Logout function, poner if para aparecer el boton aqui?
     const logout = async () => {
         await supabase.auth.signOut();
-        alert("You have logged out, return to Home Page");
+        alert("You're logging out");
         router.push({ path: '/' });
     };
         return{logout};
