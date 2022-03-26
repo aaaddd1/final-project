@@ -1,12 +1,8 @@
 <template>
-  <section>
+  <section class="min-h-full box-border">
     <Nav />
     <div class="font-Nunito box-border">
-      <!-- <SignUp />
-       <SignIn />    -->
-
-      <!-- Ends here -->
-      <!--  <router-view class="app-main" />  your routes will load inside of these tags -->
+      <router-view class="app-main" />  <!-- your routes will load inside of these tags -->
     </div>
   </section>
 </template>
@@ -14,8 +10,6 @@
 <script setup>
 //My additions
 import Nav from "./components/Nav.vue";
-//import SignUp from './components/SignUp.vue'
-//import SignIn from './components/SignIn.vue'
 
 import { onMounted } from "vue";
 import { storeToRefs } from "pinia";
