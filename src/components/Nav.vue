@@ -5,11 +5,10 @@
           <h1 class="text-4xl pb-8 ">Welcome to the Vue Task App</h1>
       </div>
        <ul class="flex flex1 justify-end ">
-         <router-link class="cursor" to="/">Home</router-link> 
-        <router-link class="cursor" v-if="$route.path !== '/task'" to="/Register">Sign Up</router-link>
-        <router-link class="cursor" v-if="$route.path !== '/task'" to="/LogIn">Sign In</router-link>
-        <button v-if="$route.path === '/task'" @click="logout" class="cursor">Logout</button> 
-         <!-- <router-link v-if="user" class="cursor" to="/CreateTask">Tasks</router-link>  -->
+        <!-- <router-link class="cursor" to="/">Home</router-link>  -->
+        <router-link class="cursor" v-if="$route.path !== '/'" to="/auth/sign-up">Sign Up</router-link>
+        <router-link class="cursor" v-if="$route.path !== '/'" to="/auth">Sign In</router-link>
+        <button v-if="$route.path === '/'" @click="logout" class="cursor">Logout</button> 
       </ul> 
   </nav>
   <router-view class="app-main" />
@@ -22,6 +21,8 @@
 //23.3 addition
 import {supabase} from '../supabase'
 import { useRouter } from 'vue-router'
+import { useUserStore } from '../store/user'
+
 
 //earlier addition
 export default {
@@ -33,11 +34,12 @@ export default {
 //setup ref to router
         const router = useRouter();
 
-    //Logout function, poner if para aparecer el boton aqui?
+    //Logout function
     const logout = async () => {
         await supabase.auth.signOut();
-        alert("You're logging out");
-        router.push({ path: '/' });
+        // await useUserStore().logOut();
+        alert("You're about to log out");
+        router.push({ path: '/auth' });
     };
         return{logout};
     },

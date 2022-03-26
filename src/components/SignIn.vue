@@ -15,10 +15,9 @@
       <div>
         <button @click="handleSignin" type="Login" class="mt-6 py-2 px-6 duration-200 border-2 bg-mustard mb-8">
           Log in</button> <br>
-        <router-link class="text-sm text-center font-semibold text-dimgrey" to="/Register">If you don't have an account, please <button class="px-2 bg-at-blue text-white rounded-3xl">Sign Up</button></router-link> 
+        <router-link class="text-sm text-center font-semibold text-dimgrey" to="/auth/sign-up">If you don't have an account, please <button class="px-2 bg-at-blue text-white rounded-3xl">Sign Up</button></router-link> 
 
       </div>
-    <!-- <button @click="logout" class="cursor">Logout</button>  -->
   </div>
 </div>
 
@@ -27,13 +26,16 @@
 <script setup>
 import { ref } from "vue";
 import { supabase } from "../supabase";
-import { useRouter } from 'vue-router'
+import { useRouter } from 'vue-router';
+import { useUserStore } from "../store/user";
 
     const router = useRouter()
 
     const email = ref("");
     const password = ref("");
 
+    
+    // SignIn function without pinia
     const handleSignin = async () => {
       try {
         // Use the Supabase provided method to handle the signin
@@ -43,23 +45,32 @@ import { useRouter } from 'vue-router'
         });
         if (error) throw error;
         console.log("you're in")
-        router.push('/task')
+        router.push('/')
       } catch (error) {
         alert(error.error_description || error.message);
-      }
-
-      
-
-    // //Logout function
-    // const logout = async () => {
-    //     await supabase.auth.signOut();
-    //     alert("You have logged out, return to Home Page");
-    //     router.push({ path: '/' });
-    // };
-    //     return{logout};
-    
+      }    
     };
-    
+
+    // SignIn function with pinia
+       const handleSignin2 = async () => {
+      try {
+        await useUserStore().signIn(email.value, password.value)
+        router.push('/')
+      } catch (error) {
+        alert(error.error_description || error.message);
+      }    
+    };
+    // SignIn function using normal function
+    async function handleSignIn3(){
+    try {
+        await useUserStore().signIn(email.value, password.value)
+        router.push('/')
+      } catch (error) {
+        alert(error.error_description || error.message);
+      }  
+    }
+ 
+
 </script>
 
 <style>

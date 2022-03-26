@@ -1,18 +1,16 @@
 <template>
   <div>
-    <h1 class="text-center mt-10 text-xl text-mustard">To start creating your tasks, please Sign in </h1>
-  <SignIn />  
-    <!-- <div> <img src="../assets/tasks1.png" alt="tasks" class="mx-auto py-10 "></div> -->
+    <NewTask/>
  </div>
 </template>
 
 <script>
-import SignIn from '../components/SignIn.vue'
+import NewTask from '../components/NewTask.vue';
 
 export default {
     name: 'Home',
     components: {
-      SignIn,
+      NewTask
     }
 }
 </script>
