@@ -2,7 +2,7 @@
   <header class="bg-at-blue text-white">
     <nav class="container py-5 px-4 flex flex-col gap-4 items-center">
       <div class="flex items-center gap-x-4">
-        <h1 class="text-3xl pb-8">Welcome to the Vue Task App</h1>
+        <h1 class="text-base sm:text-lg md:text-xl lg:text-2xl pb-8">Welcome to the Vue Task App</h1>
       </div>
       <ul class="flex flex1 justify-end">
         <!-- <router-link class="cursor" to="/">Home</router-link>  -->

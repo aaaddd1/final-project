@@ -11,6 +11,7 @@ module.exports = {
         "at-blue": "#28326d",
         "light-grey": "#f1f1f1",
         "dimgrey": "#696969",
+        "lavander": "#E6E6FA",
       },
     },
     fontFamily: {
@@ -27,7 +28,7 @@ module.exports = {
         lg: "1124px",
         xl: "1124px",
         "2xl": "1124px",
-        
+        sm: "300px",
       },
     },
   },

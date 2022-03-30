@@ -30,7 +30,6 @@
 import {ref} from "vue"
 const emit = defineEmits(["addTaskChild"])
 
-
 // variables to add newTask
 let newTask = ref("");
 let emptyNew = ref(false);
@@ -48,11 +47,9 @@ function addTask(){
     } else {
         emptyNew.value= false;
         emit("addTaskChild", newTask.value);
-        newTask.value = "";
+        newTask.value = "";     //clear input
     }
 }
-
-
 
 </script>
 

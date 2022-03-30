@@ -38,6 +38,12 @@ export const useTaskStore = defineStore("tasks", {
         .match({ id: task });
     },
 
+    async completeTask(taskId, taskComplete){
+    const { data: tasks, error } = await supabase
+        .from('tasks') 
+        .update({ is_complete: taskComplete})
+        .match({ id: taskId });
+    },
     
   },
 });
