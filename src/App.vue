@@ -8,7 +8,6 @@
 </template>
 
 <script setup>
-//My additions
 import Nav from "./components/Nav.vue";
 
 import { onMounted } from "vue";

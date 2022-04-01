@@ -1,14 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Auth from "../views/Auth.vue";
-import Home from "../views/Home.vue";
-//my additions:
 import SignIn from "../components/SignIn.vue"
 import SignUp from "../components/SignUp.vue"
 
 import TaskHome from "../views/TaskHome.vue"
 
 const routes = [
-  // { path: "/", component: Home },
   { path: "/", component: TaskHome },
   { 
     path: "/auth", 
@@ -18,7 +15,6 @@ const routes = [
       { path: "sign-up", component: SignUp},
     ]
   },
-
 ];
 
 const router = createRouter({

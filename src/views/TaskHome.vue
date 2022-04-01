@@ -1,7 +1,7 @@
 <template>
 <NewTask @addTaskChild="addTask" />
   <div class="p-8 overflow-auto relative">
-    <table class="w-1/2 mx-auto my-0">
+    <table class="w-1/2 mx-auto my-0 border">
       <thead>
         <tr>
           <th scope="col" class="p-4 font-bold bg-lavander">Task</th>
@@ -31,7 +31,7 @@
           </td>
 
            <td class="p-4">
-             <input v-on:change="taskDone(task)" v-bind:checked="task.is_complete" type="checkbox" id="is_complete" name="is_complete">
+             <input @change="taskDone(task)" v-bind:checked="task.is_complete" type="checkbox" id="is_complete" name="is_complete">
            </td>
            
         </tr>
@@ -79,7 +79,7 @@ async function editTask(task){
 //Function to mark as complete
 async function taskDone(task){
   task.is_complete = !task.is_complete;
-  await useTaskStore().completeTask( task.id, task.is_complete);
+  await useTaskStore().completeTask(task.id, task.is_complete);
   getTasks();
 }
 

@@ -1,7 +1,7 @@
 <template>
 
 <div class="max-w-screen-sm mx-auto px-4 py-10">
-  <div class="p-3 flex flex-col bg-light-grey shadow-lg mb-2 rounded-3xl">
+  <div class="p-3 flex flex-col bg-lgray shadow-lg mb-2 rounded-3xl">
     <h2 class="text-2xl mb-4 text-at-blue">Sign In</h2>
     
       <div class="flex flex-col mb-2">
@@ -13,9 +13,11 @@
         <input class="p-2 text-dimgrey" id="password" type="password" placeholder="Password" v-model="password" />
       </div>
       <div>
-        <button @click="handleSignin" type="Login" class="mt-6 py-2 px-6 duration-200 border-2 bg-mustard mb-8">
+        <button @click="handleSignin2" type="Login" class="mt-6 py-2 px-6 duration-200 border-2 bg-mustard mb-8">
           Log in</button> <br>
-        <router-link class="text-sm text-center font-semibold text-dimgrey" to="/auth/sign-up">If you don't have an account, please <button class="px-2 bg-at-blue text-white rounded-3xl">Sign Up</button></router-link> 
+        <router-link class="text-sm text-center font-semibold text-dimgrey" to="/auth/sign-up">
+        If you don't have an account, please <button class="px-2 bg-at-blue text-white rounded-3xl">
+          Sign Up</button></router-link> 
 
       </div>
   </div>

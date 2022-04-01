@@ -26,6 +26,7 @@ export const useUserStore = defineStore("user", {
     async logOut() {
       const { user, error } = await supabase.auth.signOut();
     },
+
     // Function that connects to supabase in order to signIn the user through supabase api
     async signIn(email, password) {
       const { user, error } = await supabase.auth.signIn({
@@ -37,6 +38,7 @@ export const useUserStore = defineStore("user", {
         this.user = user;
       }
     },
+    
     persist: {
       enabled: true,
       strategies: [

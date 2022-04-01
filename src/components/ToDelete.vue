@@ -89,33 +89,6 @@ export default {
       newTask.value = ""; //to clear submit
     }
 
-    // Function Adri
-    function submitTask() {
-      //if no task entered but click submit, return alert
-      if (newTask.value.length === 0) return alert("Add a task first");
-
-      //condition to create or update task, if didn't press edit, then create a new task
-      if (editedTask.value === "") {
-        tasks.value.push({
-          id: Date.now(),
-          done: false,
-          name: newTask.value,
-        });
-      } else {
-        //update task
-        tasks.value[editedTask.value].name = newTask.value;
-        editedTask.value = "";
-      }
-
-      newTask.value = ""; //to clear submit
-    }
-
-    // Function with Supabase - DIEGO
-    async function addNewTask() {
-      await useTaskStore().addTask();
-      getTasks();
-    }
-
     function toggleDone(task) {
       task.done = !task.done;
     }
@@ -130,12 +103,11 @@ export default {
       editedTask.value = index;
     }
 
-    // function changeStatus(index){
-    //   let newIndex= statuses.value.indexOf(tasks.value[index].status);
-    //   if (++newIndex > 2) {
-    //     newIndex = 0};
-    //   tasks.value[index].status = statuses.value[newIndex];
-    // }
+     // Function with Supabase - 
+    async function addNewTask() {
+      await useTaskStore().addTask();
+      getTasks();
+    }
 
     return {
       submitTask,
@@ -154,7 +126,4 @@ export default {
   text-decoration: line-through;
 }
 
-.inPro {
-  color: yellow;
-}
 </style>

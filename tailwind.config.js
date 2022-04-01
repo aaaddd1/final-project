@@ -9,7 +9,8 @@ module.exports = {
     colors:  {
         "mustard": "#e1ad01",
         "at-blue": "#28326d",
-        "light-grey": "#f1f1f1",
+        "lgray": "#D3D3D3",
+        "silver": "#C0C0C0",
         "dimgrey": "#696969",
         "lavander": "#E6E6FA",
       },
